@@ -15,7 +15,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- CSS da aplicação -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="/js/scripts.js"></script>
 </head>
 
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
                 <a href="/" class="navbar-brand">
-                    <img src="/img/hdcevents_logo.png" alt="HDC Events" width="50px">
+                    <img src="/img/hdcevents_logo.png" alt="HDC Events">
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -43,7 +43,16 @@
             </div>
         </nav>
     </header>
-    @yield('content')
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if (session('msg'))
+                    <p class="msg">{{ session('msg') }}</p>
+                @endif
+                @yield('content')
+            </div>
+        </div>
+    </main>
     <footer>
         <p>HDC Events &copy; 2020</p>
     </footer>
