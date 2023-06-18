@@ -15,6 +15,7 @@ class Event extends Model
 
     protected $dates = ['date'];
 
+    protected $guarded = [];
 
     public function user()
     {
