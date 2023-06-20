@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Event');
     }
+    public function isAdmin()
+    {
+        return $this->admin;
+    }
+
 }
